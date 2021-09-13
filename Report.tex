@@ -68,3 +68,84 @@ Attribute information are given below:\\
 13. LSTAT    percent lower status of the population\\
 14. MEDV     Median value of owner-occupied homes in 1000's doller\\
 
+\section{Methodology}
+I was using three algorithms for evaluate the model. For Figuring out best model I take some process like as linear regression, Decision tree and random forest algorithm.
+\subsection{Plotting Histogram}\label{AA} This study I used plotting Histogram for data analyze easily. All features histogram are here. From “CHAS” features I see that counts of 1 is greater than 0. From “age” features I see that more than 60 building age is 100 years. So we can easily read dataset through histogram.
+
+
+\subsection{Missing Attributes}\label{AA}
+To take care of missing attributes we have three options\\ 
+1. Get rid of the missing data points \\
+2. Get rid of the whole attribute \\
+3. Set the value to some value (0, mean or median) \\
+Following this option, we can easily handle with missing data. Picking the right evaluation metric Picking the right evaluation metric will help us to evaluate whether our model’s performance is good. Through root mean square error, mean and standard deviation I evaluate my model.
+
+\subsection{Train test splitting}
+The train-test split is a technique for evaluating the performance of a machine learning algorithm.
+It can be used for classification or regression problems and can be used for any supervised learning algorithm.
+The procedure involves taking a dataset and dividing it into two subsets. The first subset is used to fit the model and is referred to as the training dataset. The second subset is not used to train the model; instead, the input element of the dataset is provided to the model, then predictions are made and compared to the expected values. This second dataset is referred to as the test dataset. \\
+\\
+•	Train Dataset: Used to fit the machine learning model. \\
+•	Test Dataset: Used to evaluate the fit machine learning model\\
+We used 80 percent of the known dataset as training set and 20 percent used as test data set. Each record in the dataset denotes X and Y values, where X is a set of attribute values and Y is the class of the record which is the last attribute in the dataset.
+
+\subsection{Linear Regression}
+\textbf{Multiple Linear Regression} is the most common form of linear regression. The steps to perform multiple linear regression are almost similar to that of simple linear regression. In linear regression it predicts a independent value by using dependent values. In our model average number of rooms, full-value property-tax, proportion of owner-occupied is considered as dependent value. The house price Is independent value which will predict our model. 
+
+
+\subsection{Decision Tree}
+\textbf{Decision tree} builds regression or classification models in the form of a tree structure. It breaks down a dataset into smaller and smaller subsets while at the same time an associated decision tree is incrementally developed. The final result is a tree with decision nodes and leaf nodes. A decision node (e.g., Outlook) has two or more branches (e.g., Sunny, Overcast and Rainy), each representing values for the attribute tested. Leaf node (e.g., Hours Played) represents a decision on the numeric
+
+\subsection{Random Forest}
+\textbf{Random Forest} Regression is also supervised learning algorithm. A Random forest operates by constructing several decision trees during training time and outputting the mean of the classes as the prediction of all the trees.
+
+\section{Discussion and Result}
+After evaluating Linear regression, Decision tree and Random forest regression algorithms, I observe that Random forest regression give me best result both of them. So I used Random forest regression algorithm in my model. I separated my model as regression.joblib file.\\
+
+I input all features value and my model predict me price is 23.578. 
+\subsection{Figures and Tables}
+All performance matrics value is given below:
+\begin{table}[htbp]
+\caption{Performance matrics value}
+\begin{center}
+\begin{tabular}{|c|c|c|c|}
+\hline
+\textbf{Algorithm}&\multicolumn{3}{|c|}{\textbf{Table Column Head}} \\
+\cline{2-4} 
+\textbf{} & \textbf{\textit{RMSE}}& \textbf{\textit{MEAN}}& \textbf{\textit{STANDARD DEVIATION}} \\
+\hline
+Linear Regression& 4.143$^{\mathrm{}}$&5.037$^{\mathrm{}}$ & 1.059$^{\mathrm{}}$ \\
+\hline
+\hline
+Decision Tree Reg.&3.972 $^{\mathrm{}}$&4.271$^{\mathrm{}}$ & 0.777$^{\mathrm{}}$ \\
+\hline
+\hline
+Random Forest Reg. & 2.913$^{\mathrm{}}$&3.301$^{\mathrm{}}$ & 0.704$^{\mathrm{}}$ \\
+\hline
+
+\end{tabular}
+\label{tab1}
+\end{center}
+\end{table}
+
+
+
+\section{Conclusion}
+
+In this study our models are trained with Boston housing data utilizing model based linear regression, decision tree and random forest regression algorithm. Given my dataset used in this report, my main conclusion is that Random Forest is able to generate comparably accurate price. My model has shown that machine learning algorithms like Linear Regression, Decision Tree and Random Forest are promising tools for housing price prediction.
+
+
+
+\begin{thebibliography}{00}
+\bibitem{b1} thamarai2020house, title={House Price Prediction Modeling Using Machine Learning.}, author={Thamarai, M and Malarvizhi, SP}, journal={International Journal of Information Engineering \& Electronic Business},year={2020}
+\bibitem{b2} madhuri2019house, title={House price prediction using regression techniques: a comparative study},author={Madhuri, CH Raga and Anuradha, G and Pujitha, M Vani},booktitle={2019 International Conference on Smart Structures and Systems (ICSSS)},pages={1--5},year={2019}, organization={IEEE}
+\bibitem{b3} fan2006determinants,
+  title={Determinants of house price: A decision tree approach},
+  author={Fan, Gang-Zhi and Ong, Seow Eng and Koh, Hian Chye},journal={Urban Studies},volume={43},number={12},pages={2301--2315},year={2006}, publisher={Sage Publications Sage UK: London, England}
+\bibitem{b4} thamarai2020house,
+  title={House Price Prediction Modeling Using Machine Learning.}, author={Thamarai, M and Malarvizhi, SP}, journal={International Journal of Information Engineering \& Electronic Business},volume={12},number={2},year={2020}
+\end{thebibliography}
+\vspace{12pt}
+\color{red}
+
+\end{document}
